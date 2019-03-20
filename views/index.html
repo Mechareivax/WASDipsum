@@ -3,8 +3,10 @@
 <head>
 	<title>WASDipsum</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
+	<div id="wrap">
 	<header>
 		<!-- Will hold the banner image and the title -->
 		<h1>WASDipsum</h1>
@@ -13,27 +15,42 @@
 	
 	<main>
 		<ul>
-			<li>Paragraphs<input type="number" name="paragraphs" placeholder="3"></li>
-			<li>
-				Include 
+			<li><div class="margin">Paragraphs</div><input type="number" name="paragraphs" placeholder="3"></li>
+			<hr>
+			<li id="genre">
+				<div class="margin">Include</div> 
 				<button>Game</button>
 				<button>Both</button>
 				<button>Anime</button>
 			</li>
+			<hr>
 			<li>
-				Insert &lt;p&gt; tags?
-				<ul>
-					<li><input type="radio" name="">Yes</li>
-					<li><input type="radio" name="">No</li>
+				<div class="tags">Insert &lt;p&gt; tags?</div>
+				<ul class="tags">
+					<li>
+						<div class="col-2 textRight">
+							<input class="radio" type="radio" name="pTags">
+						</div>
+						<div class="col-2 textLeft">Yes</div>
+					</li>
+					<li>
+						<div class="col-2 textRight">
+							<input class="radio" type="radio" name="pTags">
+						</div>
+						<div class="col-2 textLeft">No</div>
+					</li>
 				</ul>
 				
 			</li>
+			<hr>
+			<div class="minHeight"><button><a href="#">Generate</a></button></div>
 		</ul>
 	</main>
 	
 	<footer>
-		<a href="https://twitter.com/mechareivax">Twitter</a>
-		<a href="https://github.com/Mechareivax">Github</a>
+		<a href="https://twitter.com/mechareivax" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+		<a href="https://github.com/Mechareivax" target="_blank" id="github"><i class="fab fa-github"></i></a>
 	</footer>
+	</div>
 </body>
 </html>
