@@ -1,27 +1,23 @@
 // init project
 const express = require('express'); // the library we will use to handle requests
 const app = express(); // instantiate express
-const mongodb = require('mongodb');
-app.use(require("cors")()) // allow Cross-domain requests 
-app.use(require('body-parser').json()) // automatically parses request data to JSON
 
-// base route
-app.get("/", function (request, response) {
-  response.send("TODO") // always responds with the string "TODO"
-});
+//Require the express routes defined in router.js
+const routes = require('./router');
 
-// base route
-app.post("/", function (request, response) {
-  response.send("TODO") // always responds with the string "TODO"
-});
+//Define the hostname and port where the server can be found
+const hostname = '127.0.0.1';
+const port = 3000;
 
-app.put("/", function (request, response) {
-  response.send("TODO") // always responds with the string "TODO"
-});
+//Define the directory where static files are found
+app.use(express.static('public'));
 
+//Specify the routes to be used for our application
+app.use(routes);
 
-// listen for requests, the process.env.PORT is needed because
-// we are using glitch, otherwise you could have written 80 or whatever
-var listener = app.listen(3000, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+//Begin accepting connections to the specified port
+app.listen(port, () => {
+	//Display server location information to the console
+	console.log('Server is listening at http://${hostname}:${port}/');
+})
+
